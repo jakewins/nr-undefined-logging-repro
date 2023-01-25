@@ -1,7 +1,8 @@
 FROM node:18-alpine
 ADD . /app
-RUN yarn install
 WORKDIR /app
+
+RUN yarn install && yarn run tsc
 
 ENV NEW_RELIC_APP_NAME=undefined-logging-repro
 
